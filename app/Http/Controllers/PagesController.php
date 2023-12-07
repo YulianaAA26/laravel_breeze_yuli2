@@ -11,6 +11,38 @@ class PagesController extends Controller
         return view('welcome');
     }
 
+    public function fnEstDetalle($id) {
+        $xDetAlumnos = Estudiante::findOrFail($id); //Datos de BD por ID
+        return view('Estudiante.pagDetalle', compact('xDetAlumnos'));
+    }
+
+    public function fnRegistrar (Request $request) {
+        // return $request;     //Verificando "token" y datos recibidos
+        $request -> validate([
+            'codEst' => 'required',
+            'nomEst' => 'required',
+            'apeEst' => 'required',
+            'fnaEst' => 'required',
+            'turMat' => 'required',
+            'semMat' => 'required',
+            'estMat' => 'required',
+        ]);
+
+        $nuevoEstudiante = new Estudiante;
+
+        $nuevoEstudiante->codEst =  $request->codEst;
+        $nuevoEstudiante->nomEst =  $request->nomEst;
+        $nuevoEstudiante->apeEst =  $request->apeEst;
+        $nuevoEstudiante->fnaEst =  $request->fnaEst;
+        $nuevoEstudiante->turMat =  $request->turMat;
+        $nuevoEstudiante->semMat =  $request->semMat;
+        $nuevoEstudiante->estMat =  $request->estMat;
+
+        $nuevoEstudiante->save();   //Guardar en BD
+
+        return back()->with('msj', 'Se registro con éxito...');
+    }
+
     public function fnLista () {
         $xAlumnos = Estudiante::all(); //Datos de BD
         return view('pagLista', compact('xAlumnos'));
@@ -20,7 +52,6 @@ class PagesController extends Controller
         $valor = $numero;
         $otro = 25;
     
-
         //return view('pagGaleria', ['valor'=>$numero, 'otro'=>25]);
         return view('pagGaleria', compact('valor', 'otro'));
     }
