@@ -62,7 +62,7 @@
       </form>
       <br/>
 
-      <div class="btn btn-dark fs-3 fw-bold d-grid">Lista de seguimientos</div>
+      <div class="btn btn-danger fs-3 fw-bold d-grid">Lista de seguimientos</div>
       <table class="table">
             <thead class="table-secondary">
                   <tr>

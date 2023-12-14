@@ -22,6 +22,7 @@ Route::get('/detalle/{id}',[PagesController::class, 'fnEstDetalle']) -> name('Es
 Route::get('/galeria/{numero?}',[PagesController::class, 'fnGaleria']) -> where('numero', '[0-9]+') -> name('xGaleria');
 
 Route::get('/lista',[PagesController::class, 'fnlista']) -> name('xLista');
+Route::get('/seguimiento',[PagesController::class, 'fnSeguimiento']) -> name('xSeguimiento');
 
 
 

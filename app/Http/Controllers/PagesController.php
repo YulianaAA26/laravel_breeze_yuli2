@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Estudiante;
+use App\Models\Seguimiento;
+
 
 class PagesController extends Controller
 {
@@ -46,6 +48,11 @@ class PagesController extends Controller
     public function fnLista () {
         $xAlumnos = Estudiante::all(); //Datos de BD
         return view('pagLista', compact('xAlumnos'));
+    }
+
+    public function fnSeguimiento () {
+        $xSeguimiento = Estudiante::all(); //Datos de BD
+        return view('pagListaSeg', compact('xSeguimiento'));
     }
 
     public function fnGaleria ($numero=0) {
