@@ -62,7 +62,7 @@
       </form>
       <br/>
 
-      <div class="btn btn-danger fs-3 fw-bold d-grid">Lista de seguimientos</div>
+      <div class="btn btn-info fs-3 fw-bold d-grid">Lista de seguimientos</div>
       <table class="table">
             <thead class="table-secondary">
                   <tr>
@@ -81,7 +81,16 @@
                               <a href="{{ route('Estudiante.xDetalle', $item->id) }}">      
                                     {{ $item->apeEst }}, {{ $item->nomEst }}
                               </a>
-                        <td>@mdo</td>
+                        <td>
+                        <form action="{{ route('Estudiante.xEliminar', $item->id) }}" method="post" class="d-inline">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-success btn-sm">X</button>
+                              </form>
+                              <a class="btn btn-primary btn-sm" href="{{ route('Estudiante.xActualizar', $item->id ) }}">
+                                    ...A
+                              </a>
+                        </td>
                   </tr>
                   @endforeach
             </tbody>

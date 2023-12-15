@@ -12,7 +12,7 @@
         <a class="btn btn-primary" href="{{ route('xInicio') }}" >Inicio</a>
         <a class="btn btn-primary" href="{{ route('xGaleria') }}" >Galeria</a>
         <a class="btn btn-primary" href="{{ route('xLista') }}" >Lista</a>
-        <a class="btn btn-primary" href="{{ route('xLista') }}" >Seguimiento</a>
+        <a class="btn btn-primary" href="{{ route('xSeguimiento') }}" >Seguimiento</a>
     </div>
 
     <div class="container my-4">
